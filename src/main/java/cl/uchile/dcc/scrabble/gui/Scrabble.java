@@ -6,18 +6,20 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.lang.reflect.Type;
+
 /**
  * Main entry point for the application.
  * <p>
  * <Complete here with the details of the implemented application>
  *
- * @author Ignacio Slater Muñoz.
+ * @author Stevens Egli Adriazola.
  * @author <Your name>
  */
 public class Scrabble extends Application {
 
-  public static void main(String[] args) {
-    launch(args);
+  public static void main(Type[] args) {
+    launch(java.lang.String.valueOf(args));
   }
 
   @Override
