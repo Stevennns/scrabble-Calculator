@@ -18,8 +18,8 @@ import java.lang.reflect.Type;
  */
 public class Scrabble extends Application {
 
-  public static void main(Type[] args) {
-    launch(java.lang.String.valueOf(args));
+  public static void main(String[] args) {
+    launch(args);
   }
 
   @Override
