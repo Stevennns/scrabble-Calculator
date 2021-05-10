@@ -16,11 +16,14 @@ public class Binary {
     public void setNumber(String number) {
         this.number = number;
     }
+
     public Int toInt(){
         int i =Integer.parseInt(this.number, 2);
         return new Int(i);
     }
+
     public string tostring(){
-        return new string(getNumber());
+
+        return new string(getNumber().toString());
     }
 }
