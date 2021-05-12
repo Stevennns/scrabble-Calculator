@@ -19,6 +19,7 @@ public class Binary {
         this.number = number;
     }
 
+
     public Int toInt(){
         int i =Integer.parseInt(this.number, 2);
         return new Int(i);
@@ -41,7 +42,6 @@ public class Binary {
     }
 
     public string tostring(){
-
         return new string(getNumber().toString());
     }
 }

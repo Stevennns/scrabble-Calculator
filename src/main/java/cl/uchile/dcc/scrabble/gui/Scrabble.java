@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.gui;
 
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Binary;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -26,7 +27,6 @@ public class Scrabble extends Application {
   @Override
   public void start(Stage primaryStage) {
     primaryStage.setTitle("Final reality");
-
     Label label = new Label("This will be an app sometime");
     label.setAlignment(Pos.CENTER);
 
