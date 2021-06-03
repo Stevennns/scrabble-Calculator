@@ -1,6 +1,7 @@
 package cl.uchile.dcc.scrabble.gui.Types;
 import java.util.Random;
 
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Int;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -38,7 +39,7 @@ class stringTest {
         assertNotEquals(differentstring, str);
     }
     @Test
-    void operationTest(){
+    void AddTest(){
 
         String originalStr = str.getString();
         string newStr = new string("newString");
@@ -46,8 +47,15 @@ class stringTest {
         String a_new_String = newStr.getString();
         str.setString(a_new_String);
         assertEquals(newStr,str);
+        Int a = new Int(5);
+        string b = new string("tacocaT");
+        string c = (string)b.Add(a);
+        assertNotEquals(c,str);
+        assertEquals(c,new string("tacocaT5"),"Strings distintos: a = "+b.getString()+" b= "+a.getNumber()+"se entrego = "+c.getString());
 
     }
+
+
 
 }
 

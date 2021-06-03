@@ -51,4 +51,12 @@ class BinaryTest {
 
 
     }
+    @Test
+    void addTest(){
+        Binary b1 = new Binary("101");
+        Binary b2 = new Binary("001");
+        Binary r1 = (Binary) b1.Dif(b2);
+        assertNotEquals(r1,b1);
+
+    }
 }
