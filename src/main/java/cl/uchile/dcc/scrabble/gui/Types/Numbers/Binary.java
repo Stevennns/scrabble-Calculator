@@ -34,7 +34,28 @@ public class Binary implements IOperations{
     public boolean equals(Object obj) {
         if (obj instanceof Binary) {
             var o = (Binary) obj;
-            return o.number.equals(this.number);
+            StringBuilder tb = new StringBuilder(o.getNumber());
+            StringBuilder ob = new StringBuilder(this.getNumber());
+            StringBuilder cero;
+            int diferencia =Math.abs(tb.length() - ob.length());
+
+            if(tb.length() < ob.length()){
+                for(int i = 0;i<diferencia;i++){
+                    cero = new StringBuilder("0");
+                    tb=(cero.append(tb));
+                }
+            }
+            if(tb.length() > ob.length()){
+                for(int i = 0;i<diferencia;i++){
+                    cero = new StringBuilder("0");
+                    ob=(cero.append(ob));
+                }
+
+
+            }
+            String a = tb.toString();
+            String b = ob.toString();
+            return a.equals(b);
         }
         return false;
     }
@@ -85,7 +106,7 @@ public class Binary implements IOperations{
     public IOperations AddString(string typo) {
         String a = typo.getString();
         String b = this.getNumber();
-        return new Binary(a+b);
+        return new string(a+b);
 
     }
 
@@ -195,7 +216,7 @@ public class Binary implements IOperations{
     public IOperations DivBin(Binary typo) {
         int a = typo.toInt().getNumber();
         int b = this.toInt().getNumber();
-        Int c = new Int((int)(a/b));
+        Int c = new Int((a/b));
         return c.toBinary();
     }
 
@@ -225,12 +246,21 @@ public class Binary implements IOperations{
         String b = this.getNumber();
         StringBuilder as = new StringBuilder(a);
         StringBuilder bs = new StringBuilder(b);
-        if(a.length() < b.length()){
-            as.append("0".repeat((b.length() - a.length())));
+        StringBuilder cero;
+        int diferencia =Math.abs(b.length() - a.length());
 
+        if(a.length() < b.length()){
+            for(int i = 0;i<diferencia;i++){
+                cero  = new StringBuilder("0");
+                as=(cero.append(as));
+            }
         }
         if(a.length() > b.length()){
-            bs.append("0".repeat((a.length() - b.length())));
+            for(int i = 0;i<diferencia;i++){
+                cero  = new StringBuilder("0");
+                bs=(cero.append(bs));
+            }
+
 
         }
 
@@ -275,18 +305,28 @@ public class Binary implements IOperations{
         String b = this.getNumber();
         StringBuilder as = new StringBuilder(a);
         StringBuilder bs = new StringBuilder(b);
-        if(a.length() < b.length()){
-            as.append("0".repeat((b.length() - a.length())));
+        StringBuilder cero;
+        int diferencia =Math.abs(b.length() - a.length());
 
+        if(a.length() < b.length()){
+            for(int i = 0;i<diferencia;i++){
+                cero  = new StringBuilder("0");
+                as=(cero.append(as));
+            }
         }
         if(a.length() > b.length()){
-            bs.append("0".repeat((a.length() - b.length())));
+            for(int i = 0;i<diferencia;i++){
+                cero  = new StringBuilder("0");
+                bs=(cero.append(bs));
+            }
+
 
         }
 
         String b1 =as.toString();
         String b2 = bs.toString();
         StringBuilder c = new StringBuilder(as.length());
+
         for(int i =0;i<as.length();i++){
             if(as.charAt(i)==bs.charAt(i)){
                 c.append(as.charAt(i));

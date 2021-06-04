@@ -1,19 +1,27 @@
 package cl.uchile.dcc.scrabble.gui.Types;
 
 import cl.uchile.dcc.scrabble.gui.Types.Numbers.Binary;
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Float;
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Int;
 import cl.uchile.dcc.scrabble.gui.Types.string;
 import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import cl.uchile.dcc.scrabble.gui.Types.Bool;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 class BoolTest {
     private Bool bool;
     private Bool bool2;
     private Binary b1;
     private Binary b2;
+    private string str;
+    private Int i;
+    private Float f;
+    private Binary bi;
+
 
     @BeforeEach
     void setUp() {
@@ -72,8 +80,51 @@ class BoolTest {
         assertEquals(new Bool(false),j);
         assertEquals(e,j);
 
+    }
+    @Test
+    void AddTest(){
 
+        assertNull(bool.Add(i));
+        assertNull(bool.Add(f));
+        assertNull(bool.Add(bi));
+        assertNull(bool.Add(bool));
+        assertNull(bool.Add(str));
 
 
     }
+    @Test
+    void DifTest(){
+
+
+        assertNull(bool.Dif(i));
+        assertNull(bool.Dif(f));
+        assertNull(bool.Dif(bi));
+        assertNull(bool.Dif(bool));
+        assertNull(bool.Dif(str));
+
+
+    }
+    @Test
+    void MulTest(){
+
+        assertNull(bool.Mult(i));
+        assertNull(bool.Mult(f));
+        assertNull(bool.Mult(bi));
+        assertNull(bool.Mult(bool));
+        assertNull(bool.Mult(str));
+
+    }
+    @Test
+    void DivTest(){
+
+
+        assertNull(bool.Div(i));
+        assertNull(bool.Div(f));
+        assertNull(bool.Div(bi));
+        assertNull(bool.Div(bool));
+        assertNull(bool.Div(str));
+    }
+
+
+
 }
