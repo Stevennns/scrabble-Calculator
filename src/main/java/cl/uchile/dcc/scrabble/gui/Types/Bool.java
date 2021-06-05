@@ -53,7 +53,7 @@ public class Bool implements IOperations {
     /** Calcula la suma entre tipo de la clase y otro tipo de Scrabble */
     @Override
     public IOperations Add(IOperations typo) {
-        return typo.AddBool(this);
+        return null;
     }
 
     /** Calcula la suma entre tipo de la clase y un Int de Scrabble */

@@ -9,7 +9,6 @@ public interface IOperations {
 
     /** Calcula la division entre tipo de la clase y un Float de Scrabble */
     IOperations Add(IOperations typo);
-    /** Calcula la division entre tipo de la clase y un Float de Scrabble */
     IOperations AddInt(Int typo);
     IOperations AddFloat(Float typo);
     IOperations AddString(string typo);
@@ -26,7 +25,6 @@ public interface IOperations {
     IOperations MultFloat(Float typo);
     IOperations MultBin(Binary typo);
 
-    /** Calcula la division entre tipo de la clase y un Float de Scrabble */
     IOperations Div(IOperations typo);
     IOperations DivInt(Int typo);
     IOperations DivFloat(Float typo);

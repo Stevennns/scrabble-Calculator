@@ -136,7 +136,7 @@ public class Binary implements IOperations{
     public IOperations DifInt(Int typo) {
         int a = this.toInt().getNumber();
         int b = typo.getNumber();
-        return new Int(a-b);
+        return new Int(b-a);
     }
 
     /** Calcula la resta entre tipo de la clase y un Float de Scrabble */
@@ -200,7 +200,7 @@ public class Binary implements IOperations{
         int a=  typo.getNumber();
         int b = this.toInt().getNumber();
         Int c = new Int((int)(a/b));
-        return c.toBinary();
+        return c;
     }
 
     /** Calcula la division entre tipo de la clase y un Float de Scrabble */

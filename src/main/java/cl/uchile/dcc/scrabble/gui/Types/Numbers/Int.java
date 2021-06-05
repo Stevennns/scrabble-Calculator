@@ -61,7 +61,11 @@ public class Int implements IOperations {
 
     /** Calcula la suma entre tipo de la clase y un Float de Scrabble */
     @Override
-    public IOperations AddFloat(Float typo){return null;}
+    public IOperations AddFloat(Float typo){
+        double a = typo.getNumber();
+        int b = this.getNumber();
+        return new Float(a+b);
+    }
 
     /** Calcula la suma entre tipo de la clase y un string de Scrabble */
     @Override

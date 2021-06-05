@@ -166,7 +166,7 @@ public class Float implements IOperations {
     public IOperations DivFloat(Float typo) {
         double a = typo.getNumber();
         double b =this.getNumber();
-        return new Float(a*b);
+        return new Float((double)a/b);
     }
 
     /** Calcula la division entre tipo de la clase y un Binary de Scrabble */
