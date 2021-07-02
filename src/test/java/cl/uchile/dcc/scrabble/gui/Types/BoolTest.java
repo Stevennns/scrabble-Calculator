@@ -84,11 +84,6 @@ class BoolTest {
     @Test
     void AddTest(){
 
-        assertNull(bool.Add(i));
-        assertNull(bool.Add(f));
-        assertNull(bool.Add(bi));
-        assertNull(bool.Add(bool));
-        assertNull(bool.Add(str));
 
 
     }
@@ -96,33 +91,18 @@ class BoolTest {
     void DifTest(){
 
 
-        assertNull(bool.Dif(i));
-        assertNull(bool.Dif(f));
-        assertNull(bool.Dif(bi));
-        assertNull(bool.Dif(bool));
-        assertNull(bool.Dif(str));
 
 
     }
     @Test
     void MulTest(){
 
-        assertNull(bool.Mult(i));
-        assertNull(bool.Mult(f));
-        assertNull(bool.Mult(bi));
-        assertNull(bool.Mult(bool));
-        assertNull(bool.Mult(str));
-
     }
     @Test
     void DivTest(){
 
 
-        assertNull(bool.Div(i));
-        assertNull(bool.Div(f));
-        assertNull(bool.Div(bi));
-        assertNull(bool.Div(bool));
-        assertNull(bool.Div(str));
+
     }
 
 

@@ -69,75 +69,50 @@ class IntTest {
         void AddTest() {
             Int b2 = (Int) i.Add(i2);
             Float b3 = (Float) i.Add(f);
-            Int b4 =(Int) i.Add(bi);
-            Int b5 =(Int) i.Add(bool);
-            Int b6 =(Int) i.Add(str);
+            Binary b4 =(Binary) i.Add(bi);
 
             assertEquals(b2,new Int(randomInt+i2.getNumber()));
             assertEquals(b3,new Float(randomInt+3.14));
-            assertEquals(b4,new Int(randomInt+3));
-            assertNull(b5);
-            assertNull(b6);
+            assertEquals(b4,new Int(randomInt+3).toBinary());
+
         }
         @RepeatedTest(5)
         void DifTest(){
 
             Int b2 =(Int) i.Dif(i2);
             Float b3 =(Float) i.Dif(f);
-            Int b4 =(Int) i.Dif(bi);
-            Int b5 =(Int) i.Dif(bool);
-            Int b6 =(Int) i.Dif(str);
+            Binary b4 =(Binary) i.Dif(bi);
+
 
             assertEquals(b2,new Int(randomInt-i2.getNumber()));
             assertEquals(b3,new Float(randomInt-3.14));
-            assertEquals(b4,new Int(randomInt-3),""+randomInt+"b4 es "+b4.getNumber());
-            assertNull(b5);
-            assertNull(b6);
+            assertEquals(b4,new Int(randomInt-3).toBinary(),""+randomInt+"b4 es "+b4.getNumber());
+
         }
         @RepeatedTest(5)
         void MulTest(){
             Int b2 =(Int) i.Mult(i2);
             Float b3 =(Float) i.Mult(f);
-            Int b4 =(Int) i2.Mult(bi);
-            Int b5 =(Int) i.Mult(bool);
-            Int b6 =(Int) i.Mult(str);
+            Binary b4 =(Binary) i2.Mult(bi);
 
             assertEquals(b2,new Int(randomInt*6));
             assertEquals(b3,new Float(randomInt*f.getNumber()));
-            assertEquals(b4,new Int(18));
-            assertNull(b5);
-            assertNull(b6);
+            assertEquals(b4,new Int(18).toBinary());
+
         }
         @RepeatedTest(5)
         void DivTest(){
             Int b2 =(Int) i.Div(i2);
             Float b3 =(Float) i.Div(f);
-            Int b4 =(Int) i.Div(bi);
-            Int b5 =(Int) i.Div(bool);
-            Int b6 =(Int) i.Div(str);
+            Binary b4 =(Binary) i.Div(bi);
+
 
             assertEquals(b2,new Int(randomInt/6));
             assertEquals(b3,new Float(randomInt/3.14));
-            assertEquals(b4,new Int(randomInt/3));
-            assertNull(b5);
-            assertNull(b6);
-        }
-        @RepeatedTest(5)
-        void LogicalTest(){
-
-            assertNull( i.And(i));
-            assertNull(i.And(f));
-            assertNull(i.And(bi));
-            assertNull(i.And(bool));
-            assertNull(i.And(str));
-
-            assertNull(i.Or(i));
-            assertNull(i.Or(f));
-            assertNull(i.Or(bi));
-            assertNull(i.Or(bool));
-            assertNull(i.Or(str));
+            assertEquals(b4,new Int(randomInt/3).toBinary());
 
         }
+
 
 
     }

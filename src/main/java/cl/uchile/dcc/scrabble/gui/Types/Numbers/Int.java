@@ -1,13 +1,14 @@
 package cl.uchile.dcc.scrabble.gui.Types.Numbers;
 
 
+import cl.uchile.dcc.scrabble.gui.Operations.BinaryOperatios;
+import cl.uchile.dcc.scrabble.gui.Types.AbstractType;
 import cl.uchile.dcc.scrabble.gui.Types.Bool;
-import cl.uchile.dcc.scrabble.gui.Types.IOperations;
 import cl.uchile.dcc.scrabble.gui.Types.string;
 
 import java.util.Objects;
 
-public class Int implements IOperations {
+public class Int extends AbstractType implements Number, BinaryOperatios {
     int number;
 
     /** Constructor de la clase Int  */
@@ -25,29 +26,37 @@ public class Int implements IOperations {
         this.number = number;
     }
 
+
+    @Override
+    /** Transforma el objeto a int de Scrabble */
+    public Int toInt() {
+        return new Int(number);
+    }
+    @Override
     /** Transforma el objeto Int a uno Float de Scrabble */
     public Float toFloat() {
         //String stringNum =this.number.toString();
         Double F = Double.valueOf(this.number);
         return new Float(F);
     }
-
+    @Override
     /** Transforma el objeto Int a uno Binary de Scrabble */
     public Binary toBinary() {
         String i = Integer.toBinaryString(this.number);
         return new Binary(i);
 
     }
-
+    @Override
     /** Transforma el objeto Int a uno string de Scrabble */
     public string tostring() {
         String s = Integer.toString(this.number);
         return new string(s);
     }
 
+
     /** Calcula la suma entre tipo de la clase y otro tipo de Scrabble */
-    @Override
-    public IOperations Add(IOperations typo) {
+
+    public Number Add(Number typo) {
          return typo.AddInt(this);
     }
 
@@ -61,13 +70,13 @@ public class Int implements IOperations {
 
     /** Calcula la suma entre tipo de la clase y un Float de Scrabble */
     @Override
-    public IOperations AddFloat(Float typo){
+    public Float AddFloat(Float typo){
         double a = typo.getNumber();
         int b = this.getNumber();
         return new Float(a+b);
     }
 
-    /** Calcula la suma entre tipo de la clase y un string de Scrabble */
+    /** Calcula la suma entre tipo de la clase y un string de Scrabble*/
     @Override
     public string AddString(string typo){
         String a = typo.getString();
@@ -75,13 +84,10 @@ public class Int implements IOperations {
         return new string(a+b);
     }
 
-    /** Calcula la suma entre tipo de la clase y un Bool de Scrabble */
-    @Override
-    public IOperations AddBool(Bool typo){return null;}
 
     /** Calcula la suma entre tipo de la clase y un Binary de Scrabble */
     @Override
-    public IOperations AddBin(Binary typo){
+    public Binary AddBin(Binary typo){
         int a = typo.toInt().getNumber();
         int b = this.getNumber();
         Int c = new Int(a+b);
@@ -89,26 +95,29 @@ public class Int implements IOperations {
     }
 
     /** Calcula la resta entre tipo de la clase y otro tipo de Scrabble */
-    @Override public IOperations Dif(IOperations typo){
+    public Number Dif(Number typo){
         return typo.DifInt(this);
     }
 
     /** Calcula la resta entre tipo de la clase y un Int de Scrabble */
-    @Override public IOperations DifInt(Int typo){
+    @Override
+    public Int DifInt(Int typo){
         int a = typo.getNumber();
         int b = this.getNumber();
         return new Int(a-b);
     }
 
+
+
     /** Calcula la resta entre tipo de la clase y un Float de Scrabble */
-    @Override public IOperations DifFloat(Float typo){
+    @Override public Float DifFloat(Float typo){
         double a = typo.getNumber();
         int b = this.getNumber();
         return new Float(a-b);
     }
 
     /** Calcula la resta entre tipo de la clase y un Binary de Scrabble */
-    @Override public IOperations DifBin(Binary typo){
+    @Override public Binary DifBin(Binary typo){
         int a = typo.toInt().getNumber();
         int b = this.getNumber();
         Int c = new Int(a-b);
@@ -116,26 +125,27 @@ public class Int implements IOperations {
     }
 
     /** Calcula la multiplicación entre tipo de la clase y otro tipo de Scrabble */
-    @Override public IOperations Mult(IOperations typo){
+     public Number Mult(Number typo){
         return typo.MultInt(this);
     }
 
     /** Calcula la multiplicación entre tipo de la clase y un Int de Scrabble */
-    @Override public IOperations MultInt(Int typo){
+    @Override public Int MultInt(Int typo){
         int a = typo.getNumber();
         int b = this.getNumber();
         return new Int(a*b);
     }
 
     /** Calcula la multiplicación entre tipo de la clase y un Float de Scrabble */
-    @Override public IOperations MultFloat(Float typo){
+    @Override
+     public Float MultFloat(Float typo){
         double a = typo.getNumber();
         int b = this.getNumber();
         return new Float(a*b);
     }
 
     /** Calcula la multiplicación entre tipo de la clase y un Binary de Scrabble */
-    @Override public IOperations MultBin(Binary typo){
+    @Override public Binary MultBin(Binary typo){
         int a = typo.toInt().getNumber();
         int b = this.getNumber();
         Int c = new Int(a*b);
@@ -143,12 +153,12 @@ public class Int implements IOperations {
     }
 
     /** Calcula la division entre tipo de la clase y otro tipo de Scrabble */
-    @Override public IOperations Div(IOperations typo){
+     public Number Div(Number typo){
         return typo.DivInt(this);
     }
 
     /** Calcula la division entre tipo de la clase y un Int de Scrabble */
-    @Override public IOperations DivInt(Int typo){
+    @Override public Int DivInt(Int typo){
         int a = typo.getNumber();
         int b = this.getNumber();
         double c = (a/b);
@@ -156,7 +166,8 @@ public class Int implements IOperations {
     }
 
     /** Calcula la division entre tipo de la clase y un Float de Scrabble */
-    @Override public IOperations DivFloat(Float typo){
+    @Override
+     public Float DivFloat(Float typo){
         double a = typo.getNumber();
         int b = this.getNumber();
         double c = (a/b);
@@ -164,30 +175,12 @@ public class Int implements IOperations {
     }
 
     /** Calcula la division entre tipo de la clase y un Binary de Scrabble */
-    @Override public IOperations DivBin(Binary typo){
+    @Override public Binary DivBin(Binary typo){
         int a = typo.toInt().getNumber();
         int b = this.getNumber();
         Int c = new Int((int)(a/b));
         return c.toBinary();
     }
-
-    /** Opera el conector lógico "o" entre el tipo de la clase y otro tipo de Scrabble */
-    @Override public IOperations Or(IOperations typo){return null;}
-
-    /** Opera el conector lógico "o" entre un Bool otro Bool */
-    @Override public IOperations OrBool(Bool typo){return null;}
-
-    /** Opera el conector lógico "o" entre un Binary y un Bool */
-    @Override public IOperations OrBin(Binary typo){return null;}
-
-    /** Opera el conector lógico "y" entre el tipo de la clase y otro tipo de Scrabble */
-    @Override public IOperations And(IOperations typo){return null;}
-
-    /** Opera el conector lógico "y" entre un Bool y otro Bool */
-    @Override public IOperations AndBool(Bool typo){return null;}
-
-    /** Opera el conector lógico "y" entre un Bool y un Binary */
-    @Override public IOperations AndBin(Binary typo){return null;}
 
 
     /** Determina si un objeto es igual a otro en cuanto a su contenido y clase */

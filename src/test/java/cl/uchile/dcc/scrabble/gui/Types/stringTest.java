@@ -88,49 +88,22 @@ class stringTest {
     void DifTest(){
 
 
-        assertNull(str.Dif(i));
-        assertNull(str.Dif(f));
-        assertNull(str.Dif(bi));
-        assertNull(str.Dif(bool));
-        assertNull(str.Dif(str));
-
 
     }
     @Test
     void MulTest(){
 
-        assertNull(str.Mult(i));
-        assertNull(str.Mult(f));
-        assertNull(str.Mult(bi));
-        assertNull(str.Mult(bool));
-        assertNull(str.Mult(str));
 
     }
     @Test
     void DivTest(){
 
 
-        assertNull(str.Div(i));
-        assertNull(str.Div(f));
-        assertNull(str.Div(bi));
-        assertNull(str.Div(bool));
-        assertNull(str.Div(str));
     }
     @Test
     void LogicalTest(){
 
 
-        assertNull(str.And(i));
-        assertNull(str.And(f));
-        assertNull(str.And(bi));
-        assertNull(str.And(bool));
-        assertNull(str.And(str));
-
-        assertNull(str.Or(i));
-        assertNull(str.Or(f));
-        assertNull(str.Or(bi));
-        assertNull(str.Or(bool));
-        assertNull(str.Or(str));
 
 
     }

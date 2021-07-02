@@ -1,12 +1,16 @@
 package cl.uchile.dcc.scrabble.gui.Types;
 
+import cl.uchile.dcc.scrabble.gui.Operations.Logical;
+import cl.uchile.dcc.scrabble.gui.Operations.AST.Nodo;
+import cl.uchile.dcc.scrabble.gui.Operations.AST.Resultado;
+import cl.uchile.dcc.scrabble.gui.Operations.Logical;
 import cl.uchile.dcc.scrabble.gui.Types.Numbers.Binary;
 import cl.uchile.dcc.scrabble.gui.Types.Numbers.Float;
 import cl.uchile.dcc.scrabble.gui.Types.Numbers.Int;
 
 import java.util.Objects;
 
-public class Bool implements IOperations {
+public class Bool implements Type, Logical {
     private boolean bool;
 
     /** Constructor de la clase Booleano  */
@@ -22,12 +26,16 @@ public class Bool implements IOperations {
     public void setBool(boolean bool) {
         this.bool = bool;
     }
+    public Bool toBool(){return new Bool(this.bool);}
 
+    @Override
     /** Trasforma un objeto Bool a un objeto string */
+
     public string tostring() {
 
         return new string(Boolean.toString(this.bool));
     }
+
 
     /** Entrega el opuesto de un objeto Bool */
     public Bool Not(){
@@ -50,133 +58,33 @@ public class Bool implements IOperations {
     }
 
 
-    /** Calcula la suma entre tipo de la clase y otro tipo de Scrabble */
-    @Override
-    public IOperations Add(IOperations typo) {
-        return null;
-    }
-
-    /** Calcula la suma entre tipo de la clase y un Int de Scrabble */
-    @Override
-    public IOperations AddInt(Int typo) {
-        return null;
-    }
-
-    /** Calcula la suma entre tipo de la clase y un Float de Scrabble */
-    @Override
-    public IOperations AddFloat(Float typo) {
-        return null;
-    }
 
     /** Calcula la suma entre tipo de la clase y un string de Scrabble */
-    @Override
-    public IOperations AddString(string typo) {
+
+    public string AddString(string typo) {
         String a = typo.getString();
         String b = this.tostring().getString();
         return new string(a+b);
     }
 
-    /** Calcula la suma entre tipo de la clase y un Bool de Scrabble */
-    @Override
-    public IOperations AddBool(Bool typo) {
-        return null;
-    }
-
-    /** Calcula la suma entre tipo de la clase y un Binary de Scrabble */
-    @Override
-    public IOperations AddBin(Binary typo) {
-        return null;
-    }
-
-    /** Calcula la resta entre tipo de la clase y un tipo de Scrabble */
-    @Override
-    public IOperations Dif(IOperations typo) {
-        return null;
-    }
-
-    /** Calcula la resta entre tipo de la clase y un Int de Scrabble */
-    @Override
-    public IOperations DifInt(Int typo) {
-        return null;
-    }
-
-    /** Calcula la resta entre tipo de la clase y un Float de Scrabble */
-    @Override
-    public IOperations DifFloat(Float typo) {
-        return null;
-    }
-
-    /** Calcula la resta entre tipo de la clase y un Binary de Scrabble */
-    @Override
-    public IOperations DifBin(Binary typo) {
-        return null;
-    }
-
-    /** Calcula la multiplicación entre tipo de la clase y un tipo de Scrabble */
-    @Override
-    public IOperations Mult(IOperations typo) {
-        return null;
-    }
-
-    /** Calcula la multiplicación entre tipo de la clase y un Int de Scrabble */
-    @Override
-    public IOperations MultInt(Int typo) {
-        return null;
-    }
-
-    /** Calcula la multiplicación entre tipo de la clase y un Float de Scrabble */
-    @Override
-    public IOperations MultFloat(Float typo) {
-        return null;
-    }
-
-    /** Calcula la multiplicación entre tipo de la clase y un Binary de Scrabble */
-    @Override
-    public IOperations MultBin(Binary typo) {
-        return null;
-    }
-
-    /** Calcula la division entre tipo de la clase y un tipo de Scrabble */
-    @Override
-    public IOperations Div(IOperations typo) {
-        return null;
-    }
-
-    /** Calcula la division entre tipo de la clase y un Int de Scrabble */
-    @Override
-    public IOperations DivInt(Int typo) {
-        return null;
-    }
-
-    /** Calcula la division entre tipo de la clase y un Float de Scrabble */
-    @Override
-    public IOperations DivFloat(Float typo) {
-        return null;
-    }
-
-    /** Calcula la division entre tipo de la clase y un Binary de Scrabble */
-    @Override
-    public IOperations DivBin(Binary typo) {
-        return null;
-    }
-
     /** Opera el conector lógico "o" entre el tipo de la clase y otro tipo de Scrabble*/
     @Override
-    public IOperations Or(IOperations typo) {
+    public Logical Or(Logical typo) {
         return typo.OrBool(this);
     }
 
+
     /** Opera el conector lógico "o" entre un Bool otro Bool */
     @Override
-    public IOperations OrBool(Bool typo) {
+    public Logical OrBool(Bool typo) {
         boolean a = this.getBool();
-        boolean b = typo.getBool();
+        boolean b = (typo).bool;
         return new Bool(a || b);
     }
 
-    /** Opera el conector lógico "o" entre un Binary y un Bool */
+    /*Opera el conector lógico "o" entre un Binary y un Bool
     @Override
-    public IOperations OrBin(Binary typo) {
+    public Logical OrBin(Binary typo) {
         String a = typo.getNumber();
         boolean b = this.getBool();
         //int len = a.length();
@@ -186,33 +94,39 @@ public class Bool implements IOperations {
         }
         return new Binary(c);
     }
-
+*/
     /** Opera el conector lógico "y" entre el tipo de la clase y otro tipo de Scrabble*/
     @Override
-    public IOperations And(IOperations typo) {
+    public Logical And(Logical typo) {
         return typo.AndBool(this);
     }
 
     /** Opera el conector lógico "y" entre un Bool y otro Bool */
     @Override
-    public IOperations AndBool(Bool typo) {
+    public Logical AndBool(Bool typo) {
         boolean b = this.getBool();
-        boolean a = typo.getBool();
+        boolean a = (typo).bool;
         return new Bool(a && b);
     }
 
-    /** Opera el conector lógico "y" entre un Bool y un Binary */
+
     @Override
-    public IOperations AndBin(Binary typo) {
+    public Logical OrBin(Binary typo) {
         String a = typo.getNumber();
         boolean b = this.getBool();
-        //int len = a.length();
         String c = a;
-        if(!b) {
-            c = a.replaceAll("1", "0");
-        }
+        if(b) {c = a.replaceAll("0", "1");}
         return new Binary(c);
+    }
 
+    /** Opera el conector lógico "y" entre un Bool y un Binary*/
+    @Override
+    public Logical AndBin(Binary typo) {
+        String a = typo.getNumber();
+        boolean b = this.getBool();
+        String c = a;
+        if(!b) {c = a.replaceAll("1", "0");}
+        return new Binary(c);
 
     }
 
