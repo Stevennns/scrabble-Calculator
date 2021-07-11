@@ -1,6 +1,9 @@
-package cl.uchile.dcc.scrabble.gui.Types.Numbers;
+package cl.uchile.dcc.scrabble.gui.Types;
 
 import cl.uchile.dcc.scrabble.gui.Types.Bool;
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Binary;
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Float;
+import cl.uchile.dcc.scrabble.gui.Types.Numbers.Int;
 import cl.uchile.dcc.scrabble.gui.Types.string;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
@@ -66,13 +69,13 @@ class BinaryTest {
     void addTest(){
 
         Binary b2 =(Binary) bi.Add(i);
-        Binary b3 =(Binary) bi.Add(f);
+        Float b3 =(Float) bi.Add(f);
         Binary b4 =(Binary) bi.Add(bi);
         Binary b5 =(Binary) bi.Add(bool1);
         Binary b6 =(Binary) bi.Add(str);
 
         assertEquals(b2,new Binary("11111"));
-        assertNull(b3);
+        assertEquals(b3,new Float(24.14));
         assertEquals(b4,new Binary("101010"));
         assertNull(b5);
         assertNull(b6);
@@ -82,13 +85,13 @@ class BinaryTest {
     void DifTest(){
 
         Binary b2 =(Binary) bi.Dif(i);
-        Binary b3 =(Binary) bi.Dif(f);
+        Float b3 =(Float) bi.Dif(new Float(3.0)); //21
         Binary b4 =(Binary) bi.Dif(bi);
         Binary b5 =(Binary) bi.Dif(bool1);
         Binary b6 =(Binary) bi.Dif(str);
 
         assertEquals(b2,new Binary("1011"));
-        assertNull(b3);
+        assertEquals(b3,new Float(18.0));
         assertEquals(b4,new Binary("0"));
         assertNull(b5);
         assertNull(b6);
@@ -97,13 +100,13 @@ class BinaryTest {
     void MulTest(){
         Binary b1 =(Binary) bi.Mult(i);
         Binary b2 =(Binary) bi.Mult(i);
-        Binary b3 =(Binary) bi.Mult(f);
+        Float b3 =(Float) bi.Mult(f);
         Binary b4 =(Binary) bi.Mult(bi);
         Binary b5 =(Binary) bi.Mult(bool1);
         Binary b6 =(Binary) bi.Mult(str);
 
         assertEquals(b2,new Binary("11010010"),b2.getNumber()+""+b1.getNumber());
-        assertNull(b3);
+        assertEquals(b3,new Float(65.94));
         assertEquals(b4,new Binary("110111001"), b4.getNumber());
         assertNull(b5);
         assertNull(b6);
@@ -112,13 +115,13 @@ class BinaryTest {
     void DivTest(){
         Binary b1 =(Binary) bi.Div(i);
         Binary b2 =(Binary) bi.Div(i);
-        Binary b3 =(Binary) bi.Div(f);
+        Float b3 =(Float) bi.Div(f);
         Binary b4 =(Binary) bi.Div(bi);
         Binary b5 =(Binary) bi.Div(bool1);
         Binary b6 =(Binary) bi.Div(str);
 
         assertEquals(b2,new Binary("10"));
-        assertNull(b3);
+       // assertNull(b3);
         assertEquals(b4,new Binary("1"));
         assertNull(b5);
         assertNull(b6);
@@ -143,7 +146,7 @@ class BinaryTest {
         assertEquals(a,new Binary("111111"),a.getNumber());
         assertNotEquals(bi,a);
         assertEquals(b,bi);
-        assertEquals(j,new Binary("11111111111111111111111111101010"),j.getNumber());
+        assertEquals(j,new Binary("101010"),j.getNumber());
         assertEquals(c,a);
         assertEquals(new Binary("00000"),h);
         assertEquals(bi,g);
