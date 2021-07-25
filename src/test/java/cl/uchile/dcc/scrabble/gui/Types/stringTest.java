@@ -1,9 +1,11 @@
 package cl.uchile.dcc.scrabble.gui.Types;
 import java.util.Random;
 
-import cl.uchile.dcc.scrabble.gui.Types.Numbers.Binary;
-import cl.uchile.dcc.scrabble.gui.Types.Numbers.Float;
-import cl.uchile.dcc.scrabble.gui.Types.Numbers.Int;
+import cl.uchile.dcc.scrabble.gui.Modelo.Bool;
+import cl.uchile.dcc.scrabble.gui.Modelo.Numbers.Binary;
+import cl.uchile.dcc.scrabble.gui.Modelo.Numbers.Float;
+import cl.uchile.dcc.scrabble.gui.Modelo.Numbers.Int;
+import cl.uchile.dcc.scrabble.gui.Modelo.string;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;

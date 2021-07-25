@@ -1,13 +1,12 @@
 package cl.uchile.dcc.scrabble.gui.Types;
 
-import cl.uchile.dcc.scrabble.gui.Types.Numbers.Binary;
-import cl.uchile.dcc.scrabble.gui.Types.Numbers.Float;
-import cl.uchile.dcc.scrabble.gui.Types.Numbers.Int;
-import cl.uchile.dcc.scrabble.gui.Types.string;
+import cl.uchile.dcc.scrabble.gui.Modelo.Numbers.Binary;
+import cl.uchile.dcc.scrabble.gui.Modelo.Numbers.Float;
+import cl.uchile.dcc.scrabble.gui.Modelo.Numbers.Int;
+import cl.uchile.dcc.scrabble.gui.Modelo.string;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
-import cl.uchile.dcc.scrabble.gui.Types.Bool;
+import cl.uchile.dcc.scrabble.gui.Modelo.Bool;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertNull;
