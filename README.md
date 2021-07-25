@@ -12,19 +12,21 @@ En el caso del **MVC** (modelo vista controlador) para el **modelo**, se impleme
 
 ### *Modo de uso*
 
-* Ejecutamos el archivo __Scrabble.java__ en el directorio `src/main/java/cl/uchile/dcc/scrabble/gui/Vista` , y se nos presentará la siguiente ventana.<br/> <br/>![img.png](img.png)
+* Ejecutamos el archivo __Scrabble.java__ en el directorio `src/main/java/cl/uchile/dcc/scrabble/gui/Vista` , y se nos presentará la siguiente ventana.<br/> <br/>
+![image](https://user-images.githubusercontent.com/81189568/126917498-a7d0f465-8e3a-4318-bd88-40b2d8dade67.png)
+
 
 
 * Para crear una variable hay que _*siempre*_ indicar el tipo correspondiente de esta usando los botones: `INT`, `FLOAT`, `BOOL`, `STRING` y `BINARY`.<br/> <br/>
-  ![img_1.png](img_1.png)
+  ![image](https://user-images.githubusercontent.com/81189568/126917509-687306dc-d5e6-497f-bdc7-45c6e6fb002d.png)
 
 * Al apretar el botón de tipo, si escribe el número y/o valor y finalmente _*siempre*_ declare el fin de la una variable apretando el botón `END`. Al apretar `END` en la segunda variable se ajustará la expresión a una forma más visible.<br/> <br/>
-  ![img_2.png](img_2.png)
-  ![img_3.png](img_3.png)
+  ![image](https://user-images.githubusercontent.com/81189568/126917513-f17ac11c-0f1d-4b30-a135-6a3130c85f2c.png)
+  ![image](https://user-images.githubusercontent.com/81189568/126917517-a26e74b0-5cec-4107-b3e0-b3ae5b056173.png)
 #
 * Luego si tienes un conjunto de operaciones básicas puedes obtener el resultado de la operación con el botón `=` o volver a mostrar las operaciones de forma más visible con el botón `VIEW`.<br/> <br/>
-  ![img_4.png](img_4.png)
-  ![img_5.png](img_5.png)
+  ![image](https://user-images.githubusercontent.com/81189568/126917528-d6bdc212-4922-4087-a8f6-c0f4649ee7cf.png)
+  ![image](https://user-images.githubusercontent.com/81189568/126917529-45a92135-192c-46ad-b85e-62ec3e620791.png)
 
 
 ### Otras Consideraciones:
