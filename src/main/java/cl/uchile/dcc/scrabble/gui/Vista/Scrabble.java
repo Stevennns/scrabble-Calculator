@@ -49,7 +49,7 @@ public class Scrabble extends Application {
         int hb = h/4;
         int wb = w/4;
 
-        primaryStage.getIcons().add(new Image("file:"+RESOURCE_PATH+"icon.png"));
+        primaryStage.getIcons().add(new Image("file:"+RESOURCE_PATH+ "icon.png"));
 
         GridPane pane1 = new GridPane();
         pane1.setAlignment(Pos.CENTER);
@@ -274,7 +274,7 @@ public class Scrabble extends Application {
         }
         /** Contruye las Constasntes del arbol segun su tipo*/
         public Constante Build(String str,String dato){
-            if(dato.indexOf("—")!=-1){dato = dato.replace("—","-");}
+            if(dato.contains("—")){dato = dato.replace("—","-");}
             try {
                 if(str.equals("INT"))
                 {
@@ -402,11 +402,7 @@ public class Scrabble extends Application {
                     case "9":
                     case ".":
                     case "true":
-                    case "false":  // agregamos los numeros/valores
-                        lab.append(BOTON);
-                        label1.setText(lab.toString());
-                        System.out.println(BOTON);
-                        break;
+                    case "false":// agregamos los numeros/valores
                     case "—":  // signo negativo
                         lab.append(BOTON);
                         label1.setText(lab.toString());
