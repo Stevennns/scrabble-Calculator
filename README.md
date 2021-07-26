@@ -37,6 +37,7 @@ En el caso del **MVC** (modelo vista controlador) para el **modelo**, se impleme
 
 * En caso de cometer algún error, la calculadora lo mostrará en pantalla. Para seguir utilizando debe usar el botón `BORRAR` el cual reiniciará la calculadora.
 
+* Para introducir un número negativo, hay que colocar el signo `-` que se encuentra a la izquierda de la calculadora, en caso de usar el otro ocurrirá un error
 
 
 
